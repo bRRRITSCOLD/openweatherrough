@@ -4,23 +4,26 @@ require 'json'
 
 class Current
 
-	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature
+	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature, :exorcon
+
+	def initialize
+		self.api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
+		self.exorcon = "no"
+	end
 
 	def inputs
-		puts "Please enter a City Name:"
+		puts "\nPlease enter a City Name:"
 		self.city = gets.strip.capitalize
 		puts "\nPlease enter a Country or USA State Code (Country Code Example: US, UK, FR, Etc. - and - USA State Code Example: IA, IL, MN, Etc.)."
 		self.country = gets.strip.upcase
 	end
 
 	def retrieve
-		@request = "***REMOVED***"
-		@response = open(@request).readlines.join
-		@parsed = JSON.parse(@response)
-		@temperature = @parsed['main']['temp'].to_f
+		self.request = "***REMOVED***"
+		self.response = open(@request).readlines.join
+		self.parsed = JSON.parse(@response)
+		self.temperature = @parsed['main']['temp'].to_f
 	end
-
-#	binding.pry
 
 	def current_temperature
 		begin
@@ -32,6 +35,27 @@ class Current
 			self.inputs
 		end
 	end
-end	
+		
+	def exorcon_input
+		puts "\nWoud you like to exit the ENTIRE program? (Yes or no)"
+		self.exorcon = gets.strip.to_s.downcase
+	end
+
+	def executes
+		no = "no"
+		yes = "yes"
+		while self.exorcon == no
+			self.current_temperature
+			self.exorcon_input
+				if self.exorcon == no
+					self.current_temperature
+					self.exorcon_input
+				elsif self.exorcon == yes
+					exit(true)
+				end
+		end
+	end
+
+end
 
 # binding.pry
