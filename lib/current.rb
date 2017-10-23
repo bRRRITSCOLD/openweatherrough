@@ -42,15 +42,13 @@ class Current
 	end
 
 	def executes
-		no = "no"
-		yes = "yes"
 		while self.exorcon == no
 			self.current_temperature
 			self.exorcon_input
-				if self.exorcon == no
+				if self.exorcon == "no"
 					self.current_temperature
 					self.exorcon_input
-				elsif self.exorcon == yes
+				elsif self.exorcon == "yes"
 					exit(true)
 				end
 		end
