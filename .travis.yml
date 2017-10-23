@@ -2,5 +2,9 @@
 language: ruby
 rvm:
   - "2.4.0"
-  - "rspec"
-  - "rake"
+
+install: gem install rspec
+install: gem install rake
+
+script:
+- bundle exec rake build
