@@ -8,4 +8,4 @@ install:
   - gem install rspec
 
 script:
-- bundle exec rake build
+  - rspec spec
