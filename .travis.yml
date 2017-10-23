@@ -1,6 +1,4 @@
 language: ruby
 rvm:
-  - "2.2.0"
+  - "2.4.2"
   - rspec
-
-intall: gem install rspec
