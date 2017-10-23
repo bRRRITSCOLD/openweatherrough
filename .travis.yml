@@ -1,5 +1,9 @@
+
 language: ruby
 rvm:
   - "2.4.2"
-  - rspec
-  - rake
+
+install: 
+  - "rspec"
+  - "rake"
+  - "json"
