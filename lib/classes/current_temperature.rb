@@ -1,23 +1,31 @@
 require 'open-uri'
 require 'json'
+require 'yaml'
 require_relative '../modules/cli_interface_module.rb'
+require_relative '../modules/api_module.rb'
 # require 'pry'
 
 class Current
 
 	include CLI
+	include API_KEY
 
-	attr_accessor :city_input, :country_state_input, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :ex_yes_no_input, :units_input, :ex_yes, :ex_no, :units_searcher
+	attr_accessor :city_input, :country_state_input, :api_key, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :ex_yes_no_input, :units_input, :ex_yes, :ex_no, :units_searcher
 
 	def initialize
-		@api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
 		@ex_yes = "yes"
 		@ex_no = "no"
 		@ex_yes_no_input = @ex_no
 		@units_searcher = "&units="
 	end
 
+	def set_api_key
+		self.api_key_loader
+		@api_key = ENV['API_KEY']
+	end
+
 	def current_temperature_retrieval
+		self.set_api_key
 		self.request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city_input},#{@country_state_input}&APPID=#{@api_key}#{@units_searcher}#{@units_input}"
 		self.response = open(@request).readlines.join
 		self.parsed = JSON.parse(@response)
@@ -65,19 +73,15 @@ class Current
 				elsif @ex_yes_no_input == @ex_yes
 					exit(true)
 				else
+					self.city_country_state_inputs
 					self.ex_yes_no_invalid_message
 					self.ex_yes_no_inputs until ex_yes_no_valid?
 				end
 		end
 	end
 
-	private
-
-	attr_reader :api_key
-
 end
 
 # binding.pry
-
 
 
