@@ -37,14 +37,18 @@ Enter the desired unit class of measurement desired for current temperature:
 
 * After entering the unit measurement scale you will be prompted to insert the desired city name and country/state code for the corresponding desired current temperature.
 .__________________.
+
 Enter a City Name:
+
 .__________________.
 			  
-.__________________________________________________.
+__________________________________________________.
+
 Enter a Country or USA State Code:
-	- Country Code Example: US, UK, FR, Etc.
-	- USA State Code Example: IA, IL, MN, Etc.
-.__________________________________________________.
+- Country Code Example: US, UK, FR, Etc.
+- USA State Code Example: IA, IL, MN, Etc.
+
+__________________________________________________.
 
 * Once you have entered the city name and country/state code the program will call the #current_temperature_retrieval on its own. This will cause the program to show you one of two screens, each of which is shown and explained further below:
 
@@ -53,7 +57,9 @@ Enter a Country or USA State Code:
 If the city name and country/state code combination that you have entered is valid, the current temperature data will be shown to you in the following format. CONGRATS! YOU DID IT! (CC below is the abreviation of Country Code as the data is abbreviated) (XX refers to numerics that will represent the current temperature in the chose unit measurement scale.)
 
 .___________________________________________________________________________________.
+
 The current temperature in City Name, CC: XX.
+
 .___________________________________________________________________________________.
 
 
@@ -63,20 +69,26 @@ This screen will be shown to you once the city name and country/state code has b
 
  
 ._____________________________________________________________.
+
 'City Name, CC' is not a valid combination. Please try again.
+
 ._____________________________________________________________.	  
 
 Once the current temperature is returned (whether on the first input try or after consecutive input retries), along with the current temperature output there will be a screen prompting you, the user, to specifiy if you would like to exit the entire program at this point. Typing no will result in the program returning to the unit measurement screen prompt through the entire process again until you receive your next desired current temperature. This will continue as long as you input no when prompted if you want to exit. Once you type yes however the program process will hault and complete itself shutting down the program.
 
 .______________________________________________________.
+
 Woud you like to exit the ENTIRE program? (Yes or no)
+
 .______________________________________________________.
 
 
 If the prompt does not recognize your input, any combination of lower/uppercase letters of "no" or "yes" or any other word not relating to yes or no, then you will be prompted to retry typing your input for the desired effect. This will continue to prompt you until yes or no is entered or the program is exited out of manually.
 
 .__________________________________________________________.		 
+
 Your input of 'word' was not recognized. Please try again.
+
 .__________________________________________________________.		 
 
 ## Notes
