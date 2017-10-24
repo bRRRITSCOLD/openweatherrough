@@ -11,26 +11,28 @@ describe Current do
 	end
 
 	describe '#inputs' do
-	 	before do
-	 		io_obj = double
-	 	expect(subject)
-	 		.to receive(:gets)
-	 		.and_return(io_obj)
-        	.twice
-		expect(io_obj)
-		    .to receive(:strip)
-		    .and_return(:city.capitalize)
-		expect(io_obj)
-        	.to receive(:strip)
-        	.and_return(:country.upcase)
-    	end
+		describe '#search_inputs'
+		 	before do
+		 		io_obj = double
+		 	expect(subject)
+		 		.to receive(:gets)
+		 		.and_return(io_obj)
+	        	.twice
+			expect(io_obj)
+			    .to receive(:strip)
+			    .and_return(:city.capitalize)
+			expect(io_obj)
+	        	.to receive(:strip)
+	        	.and_return(:country.upcase)
+	    	end
 
-   		it 'sets @city and @country accordingly to user inputs, also capitalizes/upcases inputs' do
-   			subject.inputs
+	   		it 'sets @city and @country accordingly to user inputs, also capitalizes/upcases inputs' do
+	   			subject.search_inputs
 
-    		expect(subject.instance_variable_get(:@city)).to eq(:city.capitalize)
-      		expect(subject.instance_variable_get(:@country)).to eq(:country.upcase)
-    	end
+	    		expect(subject.instance_variable_get(:@city)).to eq(:city.to_s.capitalize)
+	      		expect(subject.instance_variable_get(:@country)).to eq(:country.to_s.upcase)
+	    	end
+
   	end
 
   	describe '#retrieve' do
