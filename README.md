@@ -18,19 +18,19 @@ The below was noted and documented while using macOSX High Sierra:
 
 4. Starting the application you will see a welcome message:
 
-.--------------------------------------.
+.----------------------------------------.
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-._______________________________________.
+.__________________________________________.
 
 Welcome to the Open Weather Map CLI
 
-.--------------------------------------.
+.----------------------------------------.
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-._______________________________________.
+.__________________________________________.
 
 * Followed by a prompt and onscreen directions for you to enter the desired measurement scale for the returned units data:
 
