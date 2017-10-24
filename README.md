@@ -20,9 +20,7 @@ The below was noted and documented while using macOSX High Sierra:
 	a)		  ------------------------------------
 			  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 			  ____________________________________
-			  
 			  Welcome to the Open Weather Map CLI
-			  
 			  ------------------------------------
 			  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 			  ____________________________________
@@ -31,7 +29,6 @@ The below was noted and documented while using macOSX High Sierra:
 	Followed by a prompt and onscreen directions for you to enter the desired measurement scale for the returned units data:
 
 	b) 		  ______________________________________________________________________________________________________________
-			  
 			  Enter the desired unit class of measurement desired for current temperature:
 			  	- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Standard Kelvin)
 			  	- Typing 'imperial' induces the selection of Imperial (Fahrenheit)
@@ -42,14 +39,12 @@ The below was noted and documented while using macOSX High Sierra:
 	After entering the unit measurement scale you will be prompted to insert the desired city name and country/state code for the corresponding desired current temperature.
 
 	c)		  __________________	
-			  
 			  Enter a City Name:
 			  __________________
 			  
 
 
 			  __________________________________________________
-			  
 			  Enter a Country or USA State Code:
 			  	- Country Code Example: US, UK, FR, Etc.
 			  	- USA State Code Example: IA, IL, MN, Etc.
@@ -64,7 +59,6 @@ The below was noted and documented while using macOSX High Sierra:
 
 
 			  ___________________________________________________________________________________
-			  
 			  The current temperature in City Name, CC: XX.
 			  ___________________________________________________________________________________
 
@@ -75,7 +69,6 @@ The below was noted and documented while using macOSX High Sierra:
 
 
 			  _____________________________________________________________
-			  
 			  'City Name, CC' is not a valid combination. Please try again.
 			  _____________________________________________________________
 			  
@@ -83,7 +76,6 @@ The below was noted and documented while using macOSX High Sierra:
 	Once the current temperature is returned (whether on the first input try or after consecutive input retries), along with the current temperature output there will be a screen prompting you, the user, to specifiy if you would like to exit the entire program at this point. Typing no will result in the program returning to the unit measurement screen prompt through the entire process again until you receive your next desired current temperature. This will continue as long as you input no when prompted if you want to exit. Once you type yes however the program process will hault and complete itself shutting down the program.
 
 	e)		 ______________________________________________________
-			 
 			 Woud you like to exit the ENTIRE program? (Yes or no)
 			 ______________________________________________________
 			  
@@ -91,8 +83,7 @@ The below was noted and documented while using macOSX High Sierra:
 	If the prompt does not recognize your input, any combination of lower/uppercase letters of "no" or "yes" or any other word not relating to yes or no, then you will be prompted to retry typing your input for the desired effect. This will continue to prompt you until yes or no is entered or the program is exited out of manually.
 
 	f)		
-			 __________________________________________________________
-			 
+			 __________________________________________________________			 
 			 Your input of 'word' was not recognized. Please try again.
 			 __________________________________________________________
 			 
