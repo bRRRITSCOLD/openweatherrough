@@ -2,7 +2,7 @@ TravisCI build status [![Build Status](https://travis-ci.org/bRRRITSCOLD/openwea
 
 # Open Weather Map CLI
 
-Presenting the "Open Weather Map CLI" where your need for current and future weather needs are met! Currently the only support is for that of Current Temperature, there are hopes of expanding this project into Forecast and Current Weather (clud coverage, precipitation, wind speed, etc.) in the future. Please keep in mind that this is a test application/experimental project.
+Presenting the "Open Weather Map CLI" where your needs for current and future weather are met! Currently the only support is for that of Current Temperature, there are hopes of expanding this project into Forecast and Current Weather (clud coverage, precipitation, wind speed, etc.) in the future. Please keep in mind that this is a test application/experimental project.
 
 ## Using the cli
 
