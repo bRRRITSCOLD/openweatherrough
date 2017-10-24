@@ -48,8 +48,8 @@ class Current
 		self.response = open(@request).readlines.join
 		self.parsed = JSON.parse(@response)
 		self.temperature = @parsed['main']['temp'].to_f
-		self.city_name = @parsed['name']
-		self.country_abrv = @parsed['sys']['country']
+		self.city_name = @parsed['name'].to_s
+		self.country_abrv = @parsed['sys']['country'].to_s
 	end
 
 	def city_valid?
