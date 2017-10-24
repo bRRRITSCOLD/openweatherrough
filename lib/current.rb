@@ -20,7 +20,7 @@ class Current
 			  \nEnter a City Name:
 			  \n__________________
 			  \n"
-		self.city = gets.strip.to_str.capitalize
+		self.city = gets.strip.to_s.capitalize
 		puts "\n
 			  \n__________________________________________________
 			  \nEnter a Country or USA State Code:
@@ -28,7 +28,7 @@ class Current
 			  \n\t- USA State Code Example: IA, IL, MN, Etc.
 			  \n__________________________________________________
 			  \n"
-		self.country = gets.strip.to_str.upcase
+		self.country = gets.strip.to_s.upcase
 	end	
 
 	def units_input
@@ -49,7 +49,25 @@ class Current
 		self.temperature = @parsed['main']['temp'].to_f
 	end
 
-	def current_temperature
+	def exorcon_input
+		puts "\n
+			  \n______________________________________________________
+			  \nWoud you like to exit the ENTIRE program? (Yes or no)
+			  \n______________________________________________________
+			  \n"
+		self.exorcon = gets.strip.downcase
+	end
+
+		def exorcon_input
+		puts "\n
+			  \n______________________________________________________
+			  \nWoud you like to exit the ENTIRE program? (Yes or no)
+			  \n______________________________________________________
+			  \n"
+		self.exorcon = gets.strip.downcase
+	end
+
+	def inputs_retrieval_controller
 		begin
 			self.units_input
 			self.search_inputs
@@ -80,10 +98,10 @@ class Current
 
 	def executes
 		while self.exorcon == self.con
-			self.current_temperature
+			self.inputs_retrieval_controller
 			self.exorcon_input
 				if self.exorcon == self.con
-					self.current_temperature
+					self.inputs_retrieval_controller
 					self.exorcon_input
 				elsif self.exorcon == self.ex
 					exit(true)
