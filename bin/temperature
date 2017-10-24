@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-require_relative '../lib/current.rb'
-
-puts "\nWelcome to the Open Weather Map CLI"
-t = Current.new
-t.executes

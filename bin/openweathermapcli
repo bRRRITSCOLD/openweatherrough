@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative '../lib/current.rb'
+
+puts "\n------------------------------------
+	  \nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	  \n____________________________________
+	  \n
+	  \nWelcome to the Open Weather Map CLI
+	  \n
+	  \n------------------------------------
+	  \nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	  \n____________________________________"
+owmcli = Current.new
+owmcli.executes
