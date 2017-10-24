@@ -1,13 +1,13 @@
 require 'open-uri'
 require 'json'
 require_relative '../modules/cli_interface_module.rb'
-#require 'pry'
+require 'pry'
 
 class Current
 
 	include CLI
 
-	attr_accessor :city_input, :country_state_input, :api_key, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :ex_yes_no_input, :units_input, :ex_yes, :ex_no, :units_searcher
+	attr_accessor :city_input, :country_state_input, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :ex_yes_no_input, :units_input, :ex_yes, :ex_no, :units_searcher
 
 	def initialize
 		@api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
@@ -71,9 +71,13 @@ class Current
 		end
 	end
 
+	private
+
+	attr_reader :api_key
+
 end
 
-# binding.pry
+ binding.pry
 
 
 
