@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bRRRITSCOLD/openweatherrough.svg?branch=master)](https://travis-ci.org/bRRRITSCOLD/openweatherrough)
+TravisCI build status [![Build Status](https://travis-ci.org/bRRRITSCOLD/openweatherrough.svg?branch=master)](https://travis-ci.org/bRRRITSCOLD/openweatherrough)
 
 # Open Weather Map CLI
 
@@ -16,7 +16,7 @@ The below was noted and documented while using macOSX High Sierra:
 
 * unzip and locate destination of download, enter the bin file and double click on openweathermapcli unix executable to automatically start the program. 
 
-* enter the openweathermapcli directory through a terminal, then into the bin directory within the openweathermapcli and use $ ruby openweathermapcli.rb to start the program (or any ruby version/environment manager you may have installed).
+* enter the openweathermapcli directory through a terminal, then into the bin directory within the openweathermapcli folder and use "$ ruby openweathermapcli.rb" (do not include the $ as it refers to a bash terminal line denoter) to start the program (or any ruby version/environment manager you may have installed).
 
 4. Starting the application you will see a welcome message:
 
@@ -110,7 +110,14 @@ If the prompt does not recognize your input, any combination of lower/uppercase 
 
 Your input of 'word' was not recognized. Please try again.
 
-.__________________________________________________________.		 
+.__________________________________________________________.
+
+
+## Testing the program
+
+* Currently you need a internet connection to run the tests (support for non-connection testing coming 10/24/17-10/25/17). 
+
+* To test the program from our own computer simply download, for, or clone the give repository. Then access the home directory of the program through a terminal (openweathermapcli is the default folder/directory name housing the program; or whatever you named the download/folder when unzipping ot downloading it). When inside the programs home directory simpy type "$ rspec spec" and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).	 
 
 
 ## Notes
