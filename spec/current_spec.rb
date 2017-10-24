@@ -1,5 +1,6 @@
 require_relative './spec_helper.rb'
-require_relative '../lib/current.rb'
+require_relative '../lib/classes/current_temperature.rb'
+require_relative '../lib/modules/cli_interface_module.rb'
 
 describe Current do
 
@@ -26,7 +27,7 @@ describe Current do
 	        	.and_return(:country.upcase)
 	    	end
 
-	   		it 'sets @city and @country accordingly to user inputs, also capitalizes/upcases inputs' do
+	   		it 'sets @city_input and @country_state_input accordingly to user inputs, also capitalizes/upcases inputs' do
 	   			subject.city_country_state_inputs
 
 	    		expect(subject.instance_variable_get(:@city_input)).to eq(:city.to_s.capitalize)
@@ -40,7 +41,7 @@ describe Current do
 	  			temp = Current.new
 	  			temp.city_input = 'Chicago'
 	  			temp.country_state_input = 'IL'
-	  			temp.retrieve
+	  			temp.current_temperature_retrieval
 
 	  			expect(temp.temperature).to be_an_instance_of(Float)
 	  	end
