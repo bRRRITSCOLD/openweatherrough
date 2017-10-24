@@ -121,7 +121,7 @@ Your input of 'word' was not recognized. Please try again.
 
 * The simplest solution to viewing the tests and if they pass are to travel to the top of this readme and simply click on the [build status] button provided by TravisCI. Since this repository and program utilize TravisCI each commit to any branch are ran against the existing test (spec files) in the programs direcrtories. So continuous and automated testing keeps everyone up to date on the standing of the program without all the extra hassle of doing it yourself!
 
-* To test the program from our own computer simply download, for, or clone the give repository. Then access the home directory of the program through a terminal (openweathermapcli is the default folder/directory name housing the program; or whatever you named the download/folder when unzipping ot downloading it). When inside the programs home directory simpy type "$ rspec spec" and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).	 
+* To test the program from your own computer simply download, for, or clone the give repository. Then access the home directory of the program through a terminal (openweathermapcli is the default folder/directory name housing the program; or whatever you named the download/folder when unzipping ot downloading it). When inside the programs home directory simpy type "$ rspec spec" and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).	 
 
 
 ## Notes
