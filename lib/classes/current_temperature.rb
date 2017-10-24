@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'json'
 require_relative '../modules/cli_interface_module.rb'
-require 'pry'
+# require 'pry'
 
 class Current
 
@@ -77,7 +77,7 @@ class Current
 
 end
 
- binding.pry
+# binding.pry
 
 
 
