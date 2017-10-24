@@ -33,7 +33,7 @@ class Current
 	def apikey_input
 		puts "\n
 			  \n_________________________________________________________________________
-		      \nEnter an API Key to access Open Weather Map data:
+			  \nEnter an API Key to access Open Weather Map data:
 			  \n\t- Typing 'default' will induce the use of a free included API Key
 			  \n_________________________________________________________________________
 			  \n"
