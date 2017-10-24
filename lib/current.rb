@@ -4,7 +4,7 @@ require 'json'
 
 class Current
 
-	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature, :exorcon, :units, :ex, :con, :units_searcher
+	attr_accessor :city_input, :country_input, :api_key, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :exorcon, :units, :ex, :con, :units_searcher
 
 	def initialize
 		self.api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
@@ -20,7 +20,7 @@ class Current
 			  \nEnter a City Name:
 			  \n__________________
 			  \n"
-		self.city = gets.strip.to_s.capitalize
+		self.city_input = gets.strip.to_s.capitalize
 		puts "\n
 			  \n__________________________________________________
 			  \nEnter a Country or USA State Code:
@@ -28,37 +28,35 @@ class Current
 			  \n\t- USA State Code Example: IA, IL, MN, Etc.
 			  \n__________________________________________________
 			  \n"
-		self.country = gets.strip.to_s.upcase
+		self.country_input = gets.strip.to_s.upcase
 	end	
 
 	def units_input
 		puts "\n
 			  \n________________________________________________________________________________________________________________________
 			  \nEnter the desired unit class of measurement desired for current temperature:
-			  \n\t- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Imperial (Farenheit)
-			  \n\t- Possible parameters = Imperial (Fahrenheit), Metric (Celsius), Standard (Kelvin)
+			  \n\t- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Standard (Kelvin)
+			  \n\t- Typing 'imperial' induces the selection of Imperial (Fahrenheit)
+			  \n\t- Typing 'metric' induces the selection of Metric (Celsius)
 			  \n________________________________________________________________________________________________________________________
 			  \n"
 		self.units = gets.strip.to_str.downcase
 	end
 
 	def retrieve
-		self.request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city},#{@country}&APPID=#{@api_key}#{@units_searcher}#{@units}"
+		self.request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city_input},#{@country_input}&APPID=#{@api_key}#{@units_searcher}#{@units}"
 		self.response = open(@request).readlines.join
 		self.parsed = JSON.parse(@response)
 		self.temperature = @parsed['main']['temp'].to_f
+		self.city_name = @parsed['name']
+		self.country_abrv = @parsed['sys']['country']
+	end
+
+	def city_valid?
+		@city_input == @city_name
 	end
 
 	def exorcon_input
-		puts "\n
-			  \n______________________________________________________
-			  \nWoud you like to exit the ENTIRE program? (Yes or no)
-			  \n______________________________________________________
-			  \n"
-		self.exorcon = gets.strip.downcase
-	end
-
-		def exorcon_input
 		puts "\n
 			  \n______________________________________________________
 			  \nWoud you like to exit the ENTIRE program? (Yes or no)
@@ -72,29 +70,36 @@ class Current
 			self.units_input
 			self.search_inputs
 			self.retrieve
-			puts "\n
-				  \n__________________________________________________________________
-				  \nThe current temperature in #{@city}, #{@country}: #{@temperature}.
-				  \n__________________________________________________________________
-				  \n"
+				if city_valid? !=true 
+					puts "\n
+						  \n_____________________________________________________________
+						  \n#{@city_input}, #{@country_input} is not a valid combination.
+						  \n_____________________________________________________________
+						  \n"
+					self.search_inputs
+					self.retrieve until city_valid?				
+					puts "\n
+						  \n_____________________________________________________________________________
+						  \nThe current temperature in #{@city_name}, #{@country_input}: #{@temperature}.
+						  \n_____________________________________________________________________________
+						  \n"
+				else
+					puts "\n
+						  \n_____________________________________________________________________________
+						  \nThe current temperature in #{@city_name}, #{@country_input}: #{@temperature}.
+						  \n_____________________________________________________________________________
+						  \n"
+				end
 		rescue OpenURI::HTTPError
 			puts "\n
-				  \n_________________________________________________
-				  \n#{@city}, #{@country} is not a valid combination.
-				  \n_________________________________________________
+				  \n_____________________________________________________________
+				  \n#{@city_input}, #{@country_input} is not a valid combination.
+				  \n_____________________________________________________________
 				  \n"
 			self.search_inputs
 		end
 	end
 		
-	def exorcon_input
-		puts "\n
-			  \n______________________________________________________
-			  \nWoud you like to exit the ENTIRE program? (Yes or no)
-			  \n______________________________________________________
-			  \n"
-		self.exorcon = gets.strip.downcase
-	end
 
 	def executes
 		while self.exorcon == self.con
