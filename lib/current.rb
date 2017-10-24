@@ -1,15 +1,16 @@
 require 'open-uri'
 require 'json'
-# require 'pry'
+#require 'pry'
 
 class Current
 
-	attr_accessor :city, :country, :api_key, :api_holder, :request, :response, :parsed, :temperature, :exorcon, :units, :units_searcher
+	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature, :exorcon, :units, :ex, :con, :units_searcher
 
 	def initialize
 		self.api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
-		self.exorcon = "no"
-		self.units = "imperial"
+		self.ex = "yes"
+		self.con = "no"
+		self.exorcon = self.con
 		self.units_searcher = "&units="
 	end
 
@@ -19,7 +20,7 @@ class Current
 			  \nEnter a City Name:
 			  \n__________________
 			  \n"
-		self.city = gets.strip.capitalize
+		self.city = gets.strip.to_str.capitalize
 		puts "\n
 			  \n__________________________________________________
 			  \nEnter a Country or USA State Code:
@@ -27,29 +28,18 @@ class Current
 			  \n\t- USA State Code Example: IA, IL, MN, Etc.
 			  \n__________________________________________________
 			  \n"
-		self.country = gets.strip.upcase
-	end
-
-	def apikey_input
-		puts "\n
-			  \n_________________________________________________________________________
-			  \nEnter an API Key to access Open Weather Map data:
-			  \n\t- Typing 'default' will induce the use of a free included API Key
-			  \n_________________________________________________________________________
-			  \n"
-		self.api_holder = gets.strip.to_s.downcase
-		self.api_key = self.api_holder
+		self.country = gets.strip.to_str.upcase
 	end	
 
 	def units_input
 		puts "\n
-			  \n__________________________________________________________________________________________
+			  \n________________________________________________________________________________________________________________________
 			  \nEnter the desired unit class of measurement desired for current temperature:
-			  \n\t- Typing 'default' induces the selection of Imperial (Farenheit)
+			  \n\t- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Imperial (Farenheit)
 			  \n\t- Possible parameters = Imperial (Fahrenheit), Metric (Celsius), Standard (Kelvin)
-			  \n__________________________________________________________________________________________
+			  \n________________________________________________________________________________________________________________________
 			  \n"
-		self.units = gets.strip.to_s.downcase
+		self.units = gets.strip.to_str.downcase
 	end
 
 	def retrieve
@@ -59,25 +49,9 @@ class Current
 		self.temperature = @parsed['main']['temp'].to_f
 	end
 
-	def search_pars
-		self.apikey_input
-			if self.api_holder == "default" || "8eef60721040ad22fe6d4b1c96fdfbb7"
-				self.api_key = "8eef60721040ad22fe6d4b1c96fdfbb7"
-			else
-				self.api_key = self.api_holder
-			end
-		self.units_input
-			if self.units == "default" || "imperial"
-				self.units = "imperial"
-			elsif self.units == "metric"
-				self.units = "metric"
-			elsif self.units == "standard"
-				self.units = ""
-			end
-	end
-
 	def current_temperature
 		begin
+			self.units_input
 			self.search_inputs
 			self.retrieve
 			puts "\n
@@ -91,8 +65,6 @@ class Current
 				  \n#{@city}, #{@country} is not a valid combination.
 				  \n_________________________________________________
 				  \n"
-			self.apikey_input
-			self.units_input
 			self.search_inputs
 		end
 	end
@@ -103,18 +75,17 @@ class Current
 			  \nWoud you like to exit the ENTIRE program? (Yes or no)
 			  \n______________________________________________________
 			  \n"
-		self.exorcon = gets.strip.to_s.downcase
+		self.exorcon = gets.strip.downcase
 	end
 
 	def executes
-		self.search_pars
-		while self.exorcon == "no"
+		while self.exorcon == self.con
 			self.current_temperature
 			self.exorcon_input
-				if self.exorcon == "no"
+				if self.exorcon == self.con
 					self.current_temperature
 					self.exorcon_input
-				elsif self.exorcon == "yes"
+				elsif self.exorcon == self.ex
 					exit(true)
 				end
 		end
@@ -122,4 +93,7 @@ class Current
 
 end
 
-# binding.pry#
+# binding.pry
+
+
+
