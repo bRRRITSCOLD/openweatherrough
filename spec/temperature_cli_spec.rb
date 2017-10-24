@@ -16,7 +16,7 @@ describe "bin/temperature" do
     run_file("./bin/temperature")
   end
 
-  it 'calls #current_temperature on the instance of TicTacToe' do
+  it 'calls #current_temperature on the instance of Current' do
     temp = Current.new
     allow($stdout).to receive(:puts)
 
