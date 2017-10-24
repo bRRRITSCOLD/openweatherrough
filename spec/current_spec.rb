@@ -29,23 +29,24 @@ describe Current do
 	   		it 'sets @city and @country accordingly to user inputs, also capitalizes/upcases inputs' do
 	   			subject.search_inputs
 
-	    		expect(subject.instance_variable_get(:@city)).to eq(:city.to_s.capitalize)
-	      		expect(subject.instance_variable_get(:@country)).to eq(:country.to_s.upcase)
-	    	end
+	    		expect(subject.instance_variable_get(:@city_input)).to eq(:city.to_s.capitalize)
+	      		expect(subject.instance_variable_get(:@country_input)).to eq(:country.to_s.upcase)
+	    	end	
 
   	end
 
   	describe '#retrieve' do
 	  	it 'successfully retrieves temperature from api data request' do
 	  			temp = Current.new
-	  			temp.city = 'Chicago'
-	  			temp.country = 'IL'
-	  			temp_response = temp.retrieve
+	  			temp.city_input = 'Chicago'
+	  			temp.country_input = 'IL'
+	  			temp.retrieve
 
-	  			expect(temp_response).to be_an_instance_of(Float)
+	  			expect(temp.temperature).to be_an_instance_of(Float)
 	  	end
 	end
 
 end
+
 
 	
