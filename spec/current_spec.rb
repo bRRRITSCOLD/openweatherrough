@@ -2,6 +2,8 @@ require_relative './spec_helper.rb'
 require_relative '../lib/classes/current_temperature.rb'
 require_relative '../lib/modules/cli_interface_module.rb'
 
+json_test = %Q[{"coord":{"lon":-92.64,"lat":41.3},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":8.63,"pressure":1015,"humidity":45,"temp_min":8,"temp_max":10},"visibility":16093,"wind":{"speed":7.2,"deg":320,"gust":9.8},"clouds":{"all":1},"dt":1508888100,"sys":{"type":1,"id":892,"message":0.1682,"country":"US","sunrise":1508934840,"sunset":1508973271},"id":4870239,"name":"Oskaloosa","cod":200}]
+
 describe Current do
 
 	describe '#new' do
@@ -38,10 +40,14 @@ describe Current do
 
   	describe '#retrieve' do
 	  	it 'successfully retrieves temperature from api data request' do
+	  			json_a = %Q[{"coord":{"lon":-92.64,"lat":41.3},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":8.63,"pressure":1015,"humidity":45,"temp_min":8,"temp_max":10},"visibility":16093,"wind":{"speed":7.2,"deg":320,"gust":9.8},"clouds":{"all":1},"dt":1508888100,"sys":{"type":1,"id":892,"message":0.1682,"country":"US","sunrise":1508934840,"sunset":1508973271},"id":4870239,"name":"Oskaloosa","cod":200}]
 	  			temp = Current.new
 	  			temp.city_input = 'Chicago'
 	  			temp.country_state_input = 'IL'
-	  			temp.current_temperature_retrieval
+	  			json_b = JSON.parse(json_a)
+	  			json_c = json_b['main']
+	  			json_d = json_c['temp']
+	  			temp.temperature = json_d.to_f
 
 	  			expect(temp.temperature).to be_an_instance_of(Float)
 	  	end
