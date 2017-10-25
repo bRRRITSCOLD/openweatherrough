@@ -4,6 +4,8 @@ require 'json'
 
 class Current
 
+	include API
+	
 	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature
 
 	def inputs
