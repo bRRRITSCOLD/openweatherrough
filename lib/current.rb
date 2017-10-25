@@ -6,7 +6,7 @@ require_relative 'api_module.rb'
 
 class Current
 
-	include API
+	include API_KEY
 	
 	attr_accessor :city, :country, :api_key, :request, :response, :parsed, :temperature
 
