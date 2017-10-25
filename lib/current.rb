@@ -16,6 +16,11 @@ class Current
 		puts "\nPlease enter a Country or USA State Code (Country Code Example: US, UK, FR, Etc. - and - USA State Code Example: IA, IL, MN, Etc.)."
 		self.country = gets.strip.upcase
 	end
+	
+	def set_api_key
+		self.api_key_loader
+		@api_key = ENV['API_KEY']
+	end
 
 	def retrieve
 		self.set_api_key
