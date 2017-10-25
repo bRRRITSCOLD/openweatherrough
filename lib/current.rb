@@ -17,6 +17,7 @@ class Current
 	end
 
 	def retrieve
+		self.set_api_key
 		@request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city},#{@country}&APPID=#{@api_key}&units=imperial"
 		@response = open(@request).readlines.join
 		@parsed = JSON.parse(@response)
