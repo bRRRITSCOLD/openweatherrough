@@ -16,9 +16,7 @@ Overview: during development a personal API_KEY is used, in order to keep it per
 
 to acquire a FREE key for using this program.
 
-2. Move the "api.yml" file into the modules folder in the lib directory of the openweathermapcli directory. ("/lib/modules/")
-
-3. ENJOY!
+2. ENJOY!
 
 ## Using the cli
 
