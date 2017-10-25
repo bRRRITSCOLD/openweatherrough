@@ -44,7 +44,6 @@ class Current
 
 	def current_temperature_search_inputs_retrieval
 		begin
-			self.welcome_message
 			self.units_inputs
 			self.city_country_state_inputs
 			self.current_temperature_retrieval
@@ -64,6 +63,7 @@ class Current
 		
 
 	def execute_run_current_temperature
+		self.welcome_message
 		while @ex_yes_no_input == @ex_no
 			self.current_temperature_search_inputs_retrieval
 			self.ex_yes_no_inputs
@@ -72,9 +72,9 @@ class Current
 					self.ex_yes_no_inputs
 				elsif @ex_yes_no_input == @ex_yes
 					exit(true)
-				else @ex_yes_no_input != @ex_yes && @ex_yes_no_input != @ex_no
+				elsif @ex_yes_no_input != @ex_yes && @ex_yes_no_input != @ex_no
 					self.ex_yes_no_invalid_message
-					self.ex_yes_no_inputs until ex_yes_no_valid?
+					self.ex_yes_no_inputs && self.ex_yes_no_invalid_message until ex_yes_no_valid?
 				end
 		end
 	end

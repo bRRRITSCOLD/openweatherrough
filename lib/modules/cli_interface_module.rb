@@ -62,7 +62,7 @@ module CLI
 	def ex_yes_no_invalid_message
 		puts "\n
 			  \n_________________________________________________________________
-			  \nYour input of '#{@exorcon}' was not recognized. Please try again.
+			  \nYour input of '#{@ex_yes_no_input}' was not recognized. Please try again.
 			  \n_________________________________________________________________
 			  \n"
 	end

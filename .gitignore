@@ -1,1 +1,5 @@
 /lib/modules/api.yml
+.DS_Store
+*.DS_Store
+*/.DS_Store
+**/.DS_Store
