@@ -49,8 +49,7 @@ class Current
 			self.current_temperature_retrieval
 				if city_valid? !=true 
 					self.city_country_state_inputs_invalid_message
-					self.city_country_state_inputs
-					self.current_temperature_retrieval until city_valid?				
+					self.city_country_state_inputs && self.current_temperature_retrieval && self.city_country_state_inputs_invalid_message until city_valid?				
 					self.current_temperature_message
 				else
 					self.current_temperature_message
