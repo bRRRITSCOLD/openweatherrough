@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled 
+60db9f8fe35f40f6ce95146b4a1ee4ae9871e6b2 refs/heads/first-commit-submission
+a80a4707b84a4a145646c0bc38bb3ac7f0f39540 refs/heads/master
+1d8361b213fb4b3c40b75646ea109750d99bc4ce refs/pull/4/head
+cf2171a867ca57dc7c1cdf196762b55718b65c10 refs/pull/5/head
