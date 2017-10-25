@@ -140,7 +140,7 @@ Your input of 'word' was not recognized. Please try again.
 * Care has been taken to implement methods/actions/rules that ensure that any combination of upper/lowercase letters in any of the inputs results in the system capturing the lowercase version everytime. This ensures all validations and logical conditions are handled the same, allowing for smooth usage and less frequent breaks/bugs.
 
 
-* All outputs using cptured input will also then be formated to include the correc capitalization and uppercasing of all city names and country/state codes. This also goes for multi word city names like: "Des Moines" - go ahead try it, I dare you.
+* All outputs are formated to include the correct capitalization and uppercasing of all city names and country/state codes. This also goes for multi word city names like: "Des Moines" - go ahead try it, I dare you.
 
 
 ### Conclusion
