@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'json'
-require_relative '../lib/api_modue.rb'
+require_relative './api_modue.rb'
 # require 'pry'
 
 class Current
