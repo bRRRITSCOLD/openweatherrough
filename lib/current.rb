@@ -14,7 +14,7 @@ class Current
 	end
 
 	def retrieve
-		@request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city},#{@country}&APPID=8eef60721040ad22fe6d4b1c96fdfbb7&units=imperial"
+		@request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city},#{@country}&APPID=#{@api_key}&units=imperial"
 		@response = open(@request).readlines.join
 		@parsed = JSON.parse(@response)
 		@temperature = @parsed['main']['temp'].to_f
