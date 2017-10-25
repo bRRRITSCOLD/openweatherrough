@@ -72,8 +72,7 @@ class Current
 					self.ex_yes_no_inputs
 				elsif @ex_yes_no_input == @ex_yes
 					exit(true)
-				else
-					self.city_country_state_inputs
+				else @ex_yes_no_input != @ex_yes && @ex_yes_no_input != @ex_no
 					self.ex_yes_no_invalid_message
 					self.ex_yes_no_inputs until ex_yes_no_valid?
 				end
