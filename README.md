@@ -6,6 +6,20 @@ TravisCI build status:
 
 Presenting the "Open Weather Map CLI" where your needs for current and future weather are met! Currently the only support is for that of Current Temperature, there are hopes of expanding this project into Forecast and Current Weather (clud coverage, precipitation, wind speed, etc.) in the future. Please keep in mind that this is a test application/experimental project.
 
+## Configuring for use
+
+Overview: during development a personal API_KEY is used, in order to keep it personal that .yml file is .gitignored and a "test.yml" is put in place. This test.yml allows for testing to take place in isolation for quick and reasonable debugging. 
+
+1. Replace "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" in "api.yml" in the openweathermapcli directory (This prebuilt .yml is provided for quick configuration) with your own personal API_KEY from openweathermap. If you do not currently have one visit:
+
+* https://openweathermap.org/users/sign_up 
+
+to acquire a FREE key for using this program.
+
+2. Move the "api.yml" file into the modules folder in the lib directory of the openweathermapcli directory. ("/lib/modules/")
+
+3. ENJOY!
+
 ## Using the cli
 
 The below was noted and documented while using macOSX High Sierra:
