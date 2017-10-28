@@ -140,7 +140,11 @@ $ rspec spec
 
 and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).
 
-* The simplest solution to viewing the tests and if they pass are to travel to the top of this readme and simply click on the [build status] button provided by TravisCI. Since this repository and program utilize TravisCI each commit to any branch are ran against the existing test (spec files) in the programs direcrtories. So continuous and automated testing keeps everyone up to date on the standing of the program without all the extra hassle of doing it yourself!	 
+* The simplest solution to viewing the tests and if they pass are to travel to the top of this readme and simply click on the:
+
+[![Build Status](https://travis-ci.org/bRRRITSCOLD/openweatherrough.svg?branch=master)](https://travis-ci.org/bRRRITSCOLD/openweatherrough)
+
+button provided by TravisCI. Since this repository and program utilize TravisCI each commit to any branch are ran against the existing test (spec files) in the programs direcrtories. So continuous and automated testing keeps everyone up to date on the standing of the program without all the extra hassle of doing it yourself!	 
 
 
 ## Notes
