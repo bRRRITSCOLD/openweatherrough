@@ -35,32 +35,32 @@ The below was noted and documented while using macOSX High Sierra:
 4. Starting the application you will see a welcome message:
 
 ```bash
-----------------------------------------
+------------------------------------
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-__________________________________________
+____________________________________
 
 Welcome to the Open Weather Map CLI
 
-----------------------------------------
+------------------------------------
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-__________________________________________
+____________________________________
 ```
 
 * Followed by a prompt and onscreen directions for you to enter the desired measurement scale for the returned units data:
 
 ```bash
-________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________
 
 Enter the desired unit class of measurement desired for current temperature:
 - Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Standard Kelvin)
 - Typing 'imperial' induces the selection of Imperial (Fahrenheit)
 - Typing 'metric' induces the selection of Metric (Celsius)
 
-________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________
 ```
 
 * After entering the unit measurement scale you will be prompted to insert the desired city name and country/state code for the corresponding desired current temperature.
@@ -72,13 +72,13 @@ Enter a City Name:
 
 __________________
 			  
-__________________________________________________
+__________________________________________
 
 Enter a Country or USA State Code:
 - Country Code Example: US, UK, FR, Etc.
 - USA State Code Example: IA, IL, MN, Etc.
 
-__________________________________________________
+__________________________________________
 ```
 
 * Once you have entered the city name and country/state code the program will call the #current_temperature_retrieval on its own. This will cause the program to show you one of two screens, each of which is shown and explained further below:
@@ -90,11 +90,11 @@ __________________________________________________
 If the city name and country/state code combination that you have entered is valid, the current temperature data will be shown to you in the following format. CONGRATS! YOU DID IT! (CC below is the abreviation of Country Code as the data is abbreviated) (XX refers to numerics that will represent the current temperature in the chose unit measurement scale.)
 
 ```bash
-.___________________________________________________________________________________.
+_____________________________________________
 
 The current temperature in City Name, CC: XX.
 
-.___________________________________________________________________________________.
+_____________________________________________
 ```
 
 *	ii) Second possible screen (outcome):
@@ -132,7 +132,13 @@ __________________________________________________________
 
 ## Testing the program
 
-* To test without an internet connection simply open the main directory of the program (whether downloaded, forked, cloned, etc.) with a terminal of your choice and run the command "$ rspec spec" and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).
+* To test without an internet connection simply open the main directory of the program (whether downloaded, forked, cloned, etc.) with a terminal of your choice and run the command:
+
+```bash
+$ rspec spec
+```
+
+and this will automamte the tests (do not include the $ as it refers to a bash terminal line denoter).
 
 * The simplest solution to viewing the tests and if they pass are to travel to the top of this readme and simply click on the [build status] button provided by TravisCI. Since this repository and program utilize TravisCI each commit to any branch are ran against the existing test (spec files) in the programs direcrtories. So continuous and automated testing keeps everyone up to date on the standing of the program without all the extra hassle of doing it yourself!	 
 
