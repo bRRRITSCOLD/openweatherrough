@@ -10,13 +10,15 @@ Presenting the "Open Weather Map CLI" where your needs for current and future we
 
 Overview: during development a personal API_KEY is used, in order to keep it personal that .yml file is .gitignored and a "test.yml" is put in place. This test.yml allows for testing to take place in isolation for quick and reasonable debugging. 
 
-1. Replace "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" in "api.yml" in the openweathermapcli directory (This prebuilt .yml is provided for quick configuration) with your own personal API_KEY from openweathermap. If you do not currently have one visit:
+1. Replace "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" in "api.yml":
 
 ```yaml
 ---
 
 API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
+
+ in the openweathermapcli directory (This prebuilt .yml is provided for quick configuration) with your own personal API_KEY from openweathermap. If you do not currently have one visit:
 
 * https://openweathermap.org/users/sign_up 
 
