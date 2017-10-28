@@ -12,6 +12,12 @@ Overview: during development a personal API_KEY is used, in order to keep it per
 
 1. Replace "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" in "api.yml" in the openweathermapcli directory (This prebuilt .yml is provided for quick configuration) with your own personal API_KEY from openweathermap. If you do not currently have one visit:
 
+```yaml
+---
+
+API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
 * https://openweathermap.org/users/sign_up 
 
 to acquire a FREE key for using this program.
