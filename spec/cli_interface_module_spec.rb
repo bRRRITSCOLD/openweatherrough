@@ -43,22 +43,36 @@ describe CLI do
 		end
 	end
 
+	describe '#units_inputs' do
+  		let(:units_input) { 'Imperial   ' } # mixed case, some spaces
+  		let(:unit) { Current.new }
+
+  		it "Captures and sets units_input accordingly." do
+
+  		# \n
+		# \n________________________________________________________________________________________________________________________
+		# \nEnter the desired unit class of measurement desired for current temperature:
+		# \n\t- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Standard (Kelvin)
+		# \n\t- Typing 'imperial' induces the selection of Imperial (Fahrenheit)
+		# \n\t- Typing 'metric' induces the selection of Metric (Celsius)
+		# \n________________________________________________________________________________________________________________________
+		# \n
+
+    		expect(unit).to receive(:gets).and_return(units_input).once
+    		result = unit.units_inputs
+    		expect(result).to eq('imperial') # downcased, spaces stripped
+  		end
+	end
+
 	describe '#city_country_state_inputs' do
 		
 			dummy = Current.new
 
 		 	before do
 		 		io_obj = double
-		 	expect(dummy)
-		 		.to receive(:gets)
-		 		.and_return(io_obj)
-	        	.twice
-			expect(io_obj)
-			    .to receive(:strip)
-			    .and_return(:city.capitalize)
-			expect(io_obj)
-	        	.to receive(:strip)
-	        	.and_return(:country.upcase)
+		 	expect(dummy).to receive(:gets).and_return(io_obj).twice
+			expect(io_obj).to receive(:strip).and_return(:city.capitalize)
+			expect(io_obj).to receive(:strip).and_return(:country.upcase)
 	    	
 	    	end
 
@@ -86,6 +100,26 @@ describe CLI do
 	    	end	
 	end
 
+	describe '#ex_yes_no_inputs' do
+  		let(:ex_yes_no_input) { 'NO   ' } # mixed case, some spaces
+  		let(:ex_yes_no) { Current.new }
+
+  		it "Captures and sets user input for exiting program accordingly." do
+
+  		# \n
+		# \n________________________________________________________________________________________________________________________
+		# \nEnter the desired unit class of measurement desired for current temperature:
+		# \n\t- Typing 'standard', 'default' or 'any word != imperial or metric' induces the selection of Standard (Kelvin)
+		# \n\t- Typing 'imperial' induces the selection of Imperial (Fahrenheit)
+		# \n\t- Typing 'metric' induces the selection of Metric (Celsius)
+		# \n________________________________________________________________________________________________________________________
+		# \n
+
+    		expect(ex_yes_no).to receive(:gets).and_return(ex_yes_no_input).once
+    		result = ex_yes_no.ex_yes_no_inputs
+    		expect(result).to eq('no') # downcased, spaces stripped
+  		end
+	end
 
 	describe '#ex_yes_no_invalid_message' do
 		it "Ex_yes_no_invalid_message puts (displays) via CLI to user" do
@@ -100,7 +134,7 @@ describe CLI do
 			dummy.ex_yes_no_invalid_message
 
 			expect{dummy.ex_yes_no_invalid_message}.to output("\n\n_________________________________________________________________\nYour input of 'no' was not recognized. Please try again.\n_________________________________________________________________\n").to_stdout
-		
+			
 		end
 	end
 
