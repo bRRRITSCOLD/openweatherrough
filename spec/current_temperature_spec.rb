@@ -53,15 +53,15 @@ describe Current do
   	describe '#current_temperature_retrieval' do
 	  	it 'successfully retrieves temperature from api data request' do
 
-	  			dummy = Current.new
-	  			dummy.city_input = 'Oskaloosa'
-	  			dummy.country_state_input = 'IA'
-	  			json_parsed = JSON.parse(json_test_api_response)
-	  			json_parsed_main = json_parsed['main']
-	  			json_parsed_main_temp = json_parsed_main['temp']
-	  			dummy.temperature = json_parsed_main_temp.to_f
+  			dummy = Current.new
+  			dummy.city_input = 'Oskaloosa'
+  			dummy.country_state_input = 'IA'
+  			json_parsed = JSON.parse(json_test_api_response)
+  			json_parsed_main = json_parsed['main']
+  			json_parsed_main_temp = json_parsed_main['temp']
+  			dummy.temperature = json_parsed_main_temp.to_f
 
-	  			expect(dummy.temperature).to be_an_instance_of(Float)
+  			expect(dummy.temperature).to be_an_instance_of(Float)
 	  	end
 	end
 
