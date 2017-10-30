@@ -24,7 +24,9 @@ https://openweathermap.org/users/sign_up
 
 to acquire a FREE key for using this program.
 
-2. ENJOY!
+2. Place the new 'api.yml' file in your lib/modules folder alongside the 'test.yml' file.
+
+3. ENJOY!
 
 ## Using the cli
 
