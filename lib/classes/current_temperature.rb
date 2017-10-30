@@ -2,7 +2,7 @@ require 'open-uri'
 require 'json'
 require 'yaml'
 require_relative '../modules/cli_interface_module.rb'
-require_relative '../modules/api_module.rb'
+require_relative '../modules/api_key_module.rb'
 require_relative '../modules/validations_module.rb'
 # require 'pry'
 
