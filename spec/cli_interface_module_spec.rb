@@ -19,18 +19,46 @@ describe CLI do
 		end
 	end
 
+	describe '#city_country_state_inputs' do
+		
+			dummy = Current.new
+
+		 	before do
+		 		io_obj = double
+		 	expect(dummy)
+		 		.to receive(:gets)
+		 		.and_return(io_obj)
+	        	.twice
+			expect(io_obj)
+			    .to receive(:strip)
+			    .and_return(:city.capitalize)
+			expect(io_obj)
+	        	.to receive(:strip)
+	        	.and_return(:country.upcase)
+	    	end
+
+	   		it 'City_input and country_state_input accordingly to user inputs, also capitalizes/upcases inputs' do
+	   			dummy.city_country_state_inputs
+
+	    		expect(dummy.instance_variable_get(:@city_input)).to eq(:city.to_s.capitalize)
+	      		expect(dummy.instance_variable_get(:@country_state_input)).to eq(:country.to_s.upcase)
+	    	end	
+	end
+
 
 	describe '#ex_yes_no_invalid_message' do
 		it "Ex_yes_no_invalid_message puts (displays) via CLI to user" do
 			dummy = Current.new
-			expect{dummy.ex_yes_no_invalid_message}.to output("\n\n_________________________________________________________________\nYour input of 'no' was not recognized. Please try again.\n_________________________________________________________________\n").to_stdout
+			dummy.ex_yes_no_invalid_message
+			allow($stdout).to receive(:puts)
 		end
 	end
 
 	describe '#city_country_state_inputs_invalid_message' do
 		it "City_country_state_inputs_invalid_message puts (displays) via CLI to user" do
 			dummy = Current.new
-			expect{dummy.city_country_state_inputs_invalid_message}.to output("\n\n_________________________________________________________________________________\n'#{@city_input}, #{@country_state_input}' is not a valid combination. Please try again.\n_________________________________________________________________________________\n").to_stdout
+			dummy.city_country_state_inputs_invalid_message
+			allow($stdout).to receive(:puts)
 		end
 	end
 end
