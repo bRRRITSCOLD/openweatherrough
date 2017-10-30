@@ -65,6 +65,32 @@ describe Current do
 	  	end
 	end
 
+  	describe '#city_valid?' do
+	  	it 'returns true if the user input for city_input matches the returned city_name data from the json api information' do
+
+	  		dummy = Current.new
+	  		dummy.city_input = "Oskaloosa".downcase
+	  		dummy.city_name = "Oskaloosa".downcase
+
+	  		expect(dummy.city_valid?).to eq(true)
+
+	  	end	
+	end  	
+
+	describe '#ex_yes_no_valid?' do
+	  	it 'returns true if the ex_yes_no_input (user input) for ex_yes_no_inputs (prompt for exiting program) is either a) "no" or "yes" and no other word besides these two' do
+
+	  		dummy = Current.new
+	  		dummy.ex_yes_no_input = "no"
+	  		
+	  		expect(dummy.ex_yes_no_valid?).to eq(true)
+
+	  		dummy.ex_yes_no_input = "yes"
+
+	  		expect(dummy.ex_yes_no_valid?).to eq(true)
+
+	  	end	
+	end  	
 	
 
 end
