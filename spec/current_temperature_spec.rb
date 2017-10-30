@@ -1,6 +1,8 @@
 require_relative './spec_helper.rb'
 require_relative '../lib/classes/current_temperature.rb'
 require_relative '../lib/modules/cli_interface_module.rb'
+require_relative '../lib/modules/validations_module.rb'
+require_relative '../lib/modules/api_module.rb'
 
 json_test_api_response = %Q[{
 	  				"coord":{
@@ -90,18 +92,7 @@ describe Current do
 	  		expect(dummy.ex_yes_no_valid?).to eq(true)
 
 	  	end	
-	end  	
-	
-	describe '#set_api_key' do
-	  	it 'sets the users api_key env instance variable to a user defined api_key string or the default/test api_key string provided by developer' do
-
-	  		dummy = Current.new
-	  		dummy.set_api_key
-
-	  		expect(dummy.api_key).to be_an_instance_of(String)
-
-	  	end	
-	end  	
+	end  		
 
 end
 

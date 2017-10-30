@@ -1,6 +1,8 @@
 require_relative './spec_helper.rb'
 require_relative '../lib/classes/current_temperature.rb'
 require_relative '../lib/modules/cli_interface_module.rb'
+require_relative '../lib/modules/validations_module.rb'
+require_relative '../lib/modules/api_module.rb'
 
 describe CLI do
 

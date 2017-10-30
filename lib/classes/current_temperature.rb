@@ -3,12 +3,14 @@ require 'json'
 require 'yaml'
 require_relative '../modules/cli_interface_module.rb'
 require_relative '../modules/api_module.rb'
+require_relative '../modules/validations_module.rb'
 # require 'pry'
 
 class Current
 
 	include CLI
 	include API_KEY
+	include Valids
 
 	attr_accessor :city_input, :country_state_input, :api_key, :city_name, :country_abrv, :request, :response, :parsed, :temperature, :ex_yes_no_input, :units_input, :ex_yes, :ex_no, :units_searcher
 
@@ -19,11 +21,6 @@ class Current
 		@units_searcher = "&units="
 	end
 
-	def set_api_key
-		self.api_key_loader
-		@api_key = ENV['API_KEY']
-	end
-
 	def current_temperature_retrieval
 		self.set_api_key
 		self.request = "http://api.openweathermap.org/data/2.5/weather?q=#{@city_input},#{@country_state_input}&APPID=#{@api_key}#{@units_searcher}#{@units_input}"
@@ -32,14 +29,6 @@ class Current
 		self.temperature = @parsed['main']['temp'].to_f
 		self.city_name = @parsed['name'].to_s.split(" ").map!(&:capitalize).join(" ")
 		self.country_abrv = @parsed['sys']['country'].to_s.upcase
-	end
-
-	def city_valid?
-		@city_input.downcase == @city_name.downcase
-	end
-
-	def ex_yes_no_valid?
-		@ex_yes_no_input == @ex_yes || @ex_yes_no_input == @ex_no
 	end
 
 	def current_temperature_search_inputs_retrieval

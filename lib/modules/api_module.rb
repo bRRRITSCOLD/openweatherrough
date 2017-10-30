@@ -11,4 +11,10 @@ module API_KEY
 			ENV.update YAML.load(File.read(File.expand_path('../../../test.yml', __FILE__)))
 		end
 	end
+
+	def set_api_key
+		self.api_key_loader
+		@api_key = ENV['API_KEY']
+	end
+
 end
