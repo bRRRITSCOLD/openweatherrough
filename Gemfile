@@ -1,5 +1,7 @@
-# Gemfile
-source "https://rubygems.org"
-
-gem "rspec"
-gem "rake"
+source 'https://rubygems.org'
+gem 'rake'
+gem 'faraday'
+gem 'rspec'
+gem 'json'
+gem 'pry'
+gem 'webmock'
